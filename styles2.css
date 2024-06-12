@@ -1,0 +1,542 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero_section{   /* this is for the settings of background image */
+    background: url(./images/heroSectionBackground.png);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    min-height: 60vh;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 65px;
+    padding: 16px 48px;
+}
+
+.navbar a{  /*this class is paruicular for the links*/
+    color: white;
+    text-decoration: none; /*it is used to remove the underline from the anchor tag */
+}
+
+.navbar__menu_container{
+    display: flex;
+    gap: 19px;
+}
+
+.navbar__menu_container .User_icon{  /* Used for styling the icons */
+    height: 25px;
+    width: 25px;
+    display: flex;
+    justify-content: center; /* it is used in rows */
+    align-items: center; /* it is used in columns */
+    border-radius: 100%;
+    border: solid 1px white;
+    display: none;
+}
+   
+.hero__section_container{
+    display:flex;
+    flex-direction: column;  /*here we are using col flex */
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: calc(60vh - 65px);  /* if subtarcted nav bar height from hero height we will get good conatiner section */
+    /* height: 320px; */
+}
+
+.hero_section_logo{
+    width: 200px;
+    height: 40px;
+    /* height: auto; */
+}
+
+.hero_section_title{
+    text-align: center;
+    font-size: 30px; /* font size is used to modify height */
+    font-weight: 350 ; /* font weight is used to apply bold style */
+}
+
+.hero__section_input_container{
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 50%;
+    border-radius: 10px;
+}
+
+.input_container_location,
+.input_container_searchbar{
+    padding: 5px;
+    border: none;
+    outline : none;
+}
+
+.input_container_location{
+    width: 35%;
+    border-right: 1px solid #e0e0e0;
+}
+
+.input_container_searchbar{
+    width: 65%;
+}
+
+
+
+/* Screen size is from 0-600 i.e smaller/mobile screen  */
+@media only screen and (max-width :600px){
+    .navbar__menu_container .User_icon{
+        display: flex;
+    }
+    .link{
+        display: none; /* whenever the screen size goes below 600px the navigation bar will be hided */
+    }
+    .hero_section{
+        min-height: 80vh; /*It should be clearly visible */
+    }
+    .hero__section_container{
+        flex-direction: column;
+        background-color: transparent;
+        width: 100%;
+    }
+    .hero_section_title{
+        font-size: 18px;
+        width: 95%;
+    }
+    .input_container_location,
+    .input_container_searchbar{
+        padding: 18px;
+        border-radius: 10px;
+        width: 98%;
+    }
+    .hero__section_container{
+        height: calc(80vh - 40px);
+    }
+    
+}
+
+
+/* Out of Media */
+.container{               /* now here container is used seperately*/ /* Here container is the parent so we will use em with respect to this class*/
+    margin: 3rem auto;     /* we used 3rem bcz it is given in the official website of zomato*/
+    width: 90%;
+}
+
+.we__offer{          /* here we__offer refers to that four images , to style that imgs*/ 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem; 
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.we__offer_card{
+    border-radius: 10px; /* border-radius ---> it is used to make the edges smooth*/
+    /* background-color: aqua; */
+    overflow: hidden;  /* if we don't use this command then the images will not show smooth curves/edges and it will be box type*/
+    border: 1px solid #e0e0e0;
+    transition: all 0.5s ease-in-out;  /* it is nothing but an animation */
+    margin-right: 12px; /* use margin not padding , learn the difference between padding and margin*/
+
+}
+
+.we__offer_card:hover{     /* we want hover to be triggered only for the image and not for thr border so it will simes smooth hence seperately written*/
+    transform: scale(1.1);
+    
+}
+.we__offer_card img{
+    width: 100%;
+    height: 170px;
+    object-fit: cover;  /* by using this command the image will be fitted or will take shape of cover which is required */
+    object-position: center; /* the image will be at the center in the box*/
+   
+}
+
+.offer__card_content{
+    padding: 10px;
+    /* font-size: 15px;     /* here u cant apply font-size and font-weight bcz this offer__card_content class is only for the div tag and not for h2 and p tag
+    font-weight: 400; */
+}
+
+.offer__card_content h2{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.offer__card_content p{
+    font-size: 12.5px;
+}
+
+/* .collection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+.collection h1{      /* if you want to syle the h1 then use collection class and if the whole section the use container*/
+    font-weight: 600;
+}
+
+.collection .sub__heading_container{
+   font-size: 15px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between; /* here justify-content in not center its space-between*/
+   flex-wrap: wrap;
+   gap :1rem;
+}
+
+.sub__heading_container span:nth-child(2){
+    color: #ff7e8b;
+    font-size: 15px;
+    cursor: pointer;
+
+}
+
+.collections_card_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;  /* for smaller screen size images should be one below the another*/
+    gap: 0.5rem;
+    margin: 1.5rem;
+}
+
+.collections_card_container .card{
+    height: 300px;
+    min-width: 240px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    position: relative;
+}
+
+.card1{
+    background-image: url('images/collection1.jpg');
+}
+
+.card2{
+    background-image: url('images/collection2.jpg');
+}
+
+.card3{
+    background-image: url('images/collection3.jpg');
+}
+
+.card4{
+    background-image: url('images/collection4.jpg');
+}
+
+/* rgba = red green blue and opacity(visibility, inorder to make it light or dark) */
+/* opacity rages between 0 - 1*/
+.overlay{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    background-image: linear-gradient(   /*Background-image and background are same*/
+        0deg,
+        rgba(0,0,0,0.9) 0%
+        rgba(0,0,0,0.05) 50%
+        rgba(0,0,0,0.05) 85%
+    );
+    z-index: 1;  /* if there are three dimensions then we will choose which one will appear first*/
+}
+
+.collections_card_container .card .content{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: white;
+    padding: 12px 16px; /* here padding for top-bottom is 12px and gor left-right is 16px */
+    font-size: 0.9rem;   
+    /* z-index: 6; */
+}
+
+.content h4{
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.get__the_app{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255,251,247);
+    width: 100%;
+    padding: 3rem 6rem;
+}
+
+.semiContainer{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.get__the_app .semiContainer .left{  /*here img is an element*/
+    flex: 2;
+} 
+    
+.get__the_app .semiContainer .left img{
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.get__the_app .semiContainer .right {
+    flex: 3;
+    height: 100%;
+    display: flex;
+    flex-direction: column;  /* bcz we want content one by one and not side by side*/
+    gap: 1rem;
+}
+
+.right h2{    /*here h1 is an element hence no .(dot) used*/
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+.right p{
+    font-size: 0.8rem;
+}
+
+.right .radio__button_container{
+    display: flex;  /*so it can be visible on smaller screen*/
+    align-items: center;
+    gap: 1rem;
+}
+
+
+
+.right .radio__button_container div{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    gap: 10px;
+}
+
+.right .radio__button_container div input{  /*color the radio button*/
+    height: 15px;
+    width: 15px;
+    accent-color: rgb(239,79,95);  /*There is an minor difference between color and accent-color*/
+}
+
+.right .input_container{
+    display: flex;
+    gap: 0.5rem;
+}
+
+.input_container{
+    flex-wrap: wrap;
+}
+
+.input_container button,  /*Email and sare button size increase*/
+.input_container input{
+    padding: 10px 12px;
+}
+
+.input_container input{
+    flex:auto;
+    border: 1.5px solid gray;
+    outline: none;
+    border-radius: 5px;
+
+}
+
+.input_container button{
+    border: none;
+    background-color: rgb(239,79,95);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.right .download__app_container{
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+
+}
+
+.right .download__app_container h5{
+    font-weight: 400;
+    color: gray;
+}
+
+.right .download__app_container div{ /*the icons will be side by side and not one below the other*/
+    display: flex; /* if we will not write flex here then the following things like gap , flex-wrap , etc will not work3*/
+    gap: 1rem;
+}
+
+.right .download__app_container div img{
+    width: 35%;
+}
+
+/* media queries for app download */
+@media only screen and (max-width: 1300px){ /*we are using max width bcz the right and left falls under semiContsiner class so we dont have to call them one by one*/
+    .get__the_app .semiContainer .left
+    .get__the_app .semiContainer .right{
+        flex: 1;  /*now here after applying the flex the right and left part will be shrink in similar way when we will decrease the size of screen*/
+    }
+    .get__the_app .semiContainer{
+        width: 80%;   /*so here the left section should take 40% width of the screen and the right section should tske 40% of its total width*/
+    }
+}
+
+@media only screen and (max-width: 900px){
+    .get__the_app{
+        padding: 2rem 0; /* its only for the media queries*/
+    }
+    .get__the_app .semiContainer{
+        width: 95%;  /*When the screen size is too small the semiContainer should take 95% of the screen*/
+        flex-direction: column;
+    }
+
+}
+
+.footer{
+    width: 100%;
+}
+
+.footer_section_1{
+    display: flex;
+    flex-wrap: wrap; /* find out when to apply*/
+    align-items: center;
+    justify-content: space-between; /*it should be at the bpttom not at center*/
+    width: 80%;
+    margin: auto;
+}
+
+.footer_section_1 img{
+    width:132px;
+}
+
+.section_1_buttonconatiner{
+    display: flex;
+    gap: 1rem;
+}
+
+.section_1_buttonconatiner button{
+    padding: 3px 7px;
+    width: 90px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    background-color: transparent;
+    /* background-color: white; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px; /*it gives the gapping between flag and name(India)*/
+    cursor: pointer;
+}
+
+.navigation_conatiner{
+    display: grid; /*insted of writting flex we are writting grid, grid is 2D but here we are using it for 1D*/
+    /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr; */ /*We need 5 fragments/columns */
+    grid-template-columns: repeat(5, 1fr); /*insted of writting as per given in above line we can also write it this way*/
+    width: 80%;
+    margin: auto; /*because it is on the extream left*/
+    gap: 1rem;
+    padding: 3rem 0 ; /*padding is applied only for its top amd bottom*/
+}
+
+.link__container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.link__container h5{
+    font-weight: 500;
+    font-size: 15px;
+    margin-bottom: 5px;
+    letter-spacing: 0.1rem;
+}
+
+.footer__link{
+    text-decoration: none;  /*the underscore will be dissappear*/
+    color: gray;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.footer__link:hover{
+    color: black;
+}
+
+.section__links_conatiner button{
+    background-color: black;
+    /* color: white;  ---> we will not write in this way bcz those are the icons */
+    border: none;
+    width: 25px; /*before making it round make the icons perfect square*/
+    height: 25px;
+    border-radius: 30px;
+    /* gap: 0.8rem; */
+    cursor: pointer;
+}
+
+.section__links_conatiner button i{
+    color: white;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.footer__section_logos{
+    width: 100%;
+    width: 137px;
+}
+
+.disclamer{
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    width: 80%;
+    color: #4F4F4F;
+    margin: auto; /*to take the content at center we used margin not flex*/
+    font-size: 13px;
+    font-weight: 350;
+    border-top: 1px solid #4F4F4F;
+    padding-top: 1.5rem;
+}
+
+@media only screen and (max-width: 900px){
+    .navigation_conatiner{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .navigation_conatiner{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 300px){
+    .navigation_conatiner{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+
+
+
+
+
